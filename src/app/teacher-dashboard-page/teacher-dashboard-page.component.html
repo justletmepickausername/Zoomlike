@@ -1,0 +1,124 @@
+<app-navbar></app-navbar>
+
+<div class="main-container">
+
+    <div class="inner-container">
+
+        <div class="module">
+
+            <p class="module-title">Create Student Accounts</p>
+
+            <div class="spacer-container">
+
+                <p class="input-label">Student Username</p>
+                <input #studentUsernameInput/>
+
+                <p class="input-label">Student Password</p>
+                <input #studentPasswordInput/>
+
+                <p class="input-label">Student Email</p>
+                <input #studentEmailInput/>
+
+                <button (click)="CreateStudentAccount(studentUsernameInput, studentPasswordInput, studentEmailInput)" class="module-button">Create Account</button>
+
+            </div>
+
+        </div>
+
+        <div class="module">
+
+            <p class="module-title">Manage Student Accounts</p>
+
+            <table>
+
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Controls</th>
+                </tr>
+
+                <tr *ngFor="let row of studentAccounts; index as i">
+                    <td>{{row.username}}</td>
+                    <td>{{row.email}}</td>
+                    <td>
+                        <div class="controls-container">
+
+                            <img (click)="DeleteStudentAccount(i)" class="control-button" src="/assets/trash.svg"/>
+
+                            <mat-icon (click)="ResetStudentPassword(i)" style="color: #284068; font-size: 33px; width: 40px; height: 30px; padding: 0;" class="material-symbols-outlined special-icon control-button">
+                                lock_reset
+                            </mat-icon>
+
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="module">
+
+            <p class="module-title">Create Class</p>
+
+            <div class="spacer-container">
+
+                <p class="input-label">Class Name</p>
+                <input id="classCreationClassNameInput"/>
+
+                <p class="input-label">Day of the Week</p>
+                <mat-select [value]="selectedDayOfTheWeek" id="classCreationClassDaySelect">
+                    <mat-option value="Sunday">Sunday</mat-option>
+                    <mat-option value="Monday">Monday</mat-option>
+                    <mat-option value="Tuesday">Tuesday</mat-option>
+                    <mat-option value="Wednesday">Wednesday</mat-option>
+                    <mat-option value="Thursday">Thursday</mat-option>
+                    <mat-option value="Friday">Friday</mat-option>
+                </mat-select>
+
+                <p class="input-label">Starting Hour</p>
+                <input [ngxTimepicker]="startHourPicker" id="classCreationStartingHourInput"/>
+                <ngx-material-timepicker [minutesGap]="15" #startHourPicker></ngx-material-timepicker>
+
+                <p class="input-label">Ending Hour</p>
+                <input [ngxTimepicker]="endHourPicker" id="classCreationEndingHourInput"/>
+                <ngx-material-timepicker [minutesGap]="15" #endHourPicker></ngx-material-timepicker>
+
+                <p class="input-label">Select Students</p>
+                <mat-select multiple id="classCreationStudentsSelect">
+                    <mat-option *ngFor="let row of studentAccounts; index as i">{{row.username}}</mat-option>
+                </mat-select>
+
+                <p class="input-label">Select Teacher</p>
+                <mat-select [(value)]="selectedTeacher" id="classCreationTeacherSelect">
+                    <mat-option *ngFor="let row of teacherAccounts; index as i" value="row.username">{{row.username}}</mat-option>
+                </mat-select>
+
+                <p class="input-label">Default Whiteboard Background for Class</p>
+                <mat-select id="classCreationWhiteboardBackgroundSelect">
+                    <mat-option value="Square Background">Square Background</mat-option>
+                    <mat-option value="Lines Background">Lines Background</mat-option>
+                    <mat-option value="Dotted Background">Dotted Background</mat-option>
+                </mat-select>
+
+                <p class="input-label">Default Microphone State for Class</p>
+                <mat-button-toggle-group (change)="onMicrophoneButtonToggleChange($event)" id="classCreationMicrophoneStateToggleButton">
+                    <mat-button-toggle value="Muted">Muted</mat-button-toggle>
+                    <mat-button-toggle value="Unmuted">Unmuted</mat-button-toggle>
+                </mat-button-toggle-group>
+
+                <p class="input-label">Default Camera State for Class</p>
+                <mat-button-toggle-group (change)="onCameraButtonToggleChange($event)" id="classCreationCameraStateToggleButton">
+                    <mat-button-toggle value="On">On</mat-button-toggle>
+                    <mat-button-toggle value="Off">Off</mat-button-toggle>
+                </mat-button-toggle-group>
+
+                <button (click)="CreateClass()" class="module-button">Create Class</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

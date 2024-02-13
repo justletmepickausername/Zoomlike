@@ -1,0 +1,461 @@
+.main-container
+{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    display: none;
+}
+
+.main-container-2
+{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    height: 100vh;
+}
+
+.left-column
+{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 80px;
+}
+
+.right-column
+{
+    width: 50%;
+    height: 100%;
+    background-image: url('/assets/Pattern.svg');
+    background-color: #005EEE0D;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row
+{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title
+{
+    font-family: "Poppins";
+    font-size: 58px;
+    font-weight: 600;
+    color: #005EEE;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 100%;
+}
+
+.login-flex-row
+{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-option-button
+{
+    border-radius: 12px;
+    border: 2px solid var(--Blue, #005EEE);
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.10);
+
+    padding: 12px 24px;
+
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+
+    color: #005EEE;
+
+    background-color: white;
+}
+
+.login-option-button:hover
+{
+    cursor: pointer;
+}
+
+.selected-option-button
+{
+    color: white;
+    background-color: #005EEE;
+}
+
+.sub-title
+{
+    font-family: "Poppins";
+    font-size: 25px;
+    font-weight: 500;
+    color: #242424;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 100%;
+
+    margin-top: 10px;
+}
+
+.logo-image
+{
+    margin-right: 25px;
+}
+
+.login-card
+{
+    background-color: white;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.login-card-description
+{
+    font-family: "Poppins";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.login-card-title
+{
+    font-family: "Poppins";
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    color: #005EEE;
+}
+
+.input-icons i 
+{
+    position: absolute;
+}
+
+.input-icons img
+{
+    position: absolute;
+}
+  
+.input-icons 
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    margin-top: 35px;
+}
+
+.icon-image
+{
+    padding: 19px;
+    width: 25px;
+    opacity: 0.8;
+}
+
+.icon-image-right
+{
+    padding: 19px;
+    width: 25px;
+    opacity: 0.8;
+
+    right: 0px;
+}
+
+.eye-image:hover
+{
+    cursor: pointer;
+}
+
+.forgot-pass
+{
+    margin: 0;
+    padding: 0;
+}
+
+.icon 
+{
+    padding: 19px;
+    min-width: 40px;
+    font-size: 23px;
+
+    opacity: 0.8;
+}
+
+.input-field
+{
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background-color: var(--Gray, #E8EEF5);
+
+    text-align: left;
+    text-indent: 35px;
+
+    border: none;
+
+    margin: 0;
+}
+
+::placeholder
+{
+    color: #A7BBDA;
+
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.forgot-pass
+{
+    color: var(--Black, #242424);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin: 0;
+    padding: 0;
+
+    margin-top: 12px;
+
+    text-align: right;
+}
+
+.forgot-pass:hover
+{
+    cursor: pointer;
+}
+
+.login-card-button
+{
+    background-color: #005EEE;
+    border-radius: 12px;
+    border: none;
+    color: white;
+
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+
+    width: 100%;
+
+    padding: 17px 0px;
+
+    margin-top: 35px;
+}
+
+.login-card-button:hover
+{
+    cursor: pointer;
+}
+
+.continue-as-guest
+{
+    color: var(--Black, #242424);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+
+    text-align: center;
+
+    margin-top: 35px;
+}
+
+.extra-card-text
+{
+    color: var(--Black, #242424);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+.login-link-text
+{
+    color: var(--Blue, #005EEE);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.inner-container
+{
+    margin-top: 60px;
+
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.main-page-title
+{
+    font-family: "Outfit";
+    font-size: 36px;
+    font-weight: 500;
+
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.input-label
+{
+    font-family: "Outfit";
+    font-size: 22px;
+    font-weight: 400;
+
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+select
+{
+    margin-bottom: 40px;
+
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    border: 1px solid rgb(175, 175, 175);
+
+    text-align: center;
+    padding: 10px;
+    
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    font-family: "Outfit";
+    font-size: 18px;
+}
+
+input
+{
+    margin-bottom: 40px;
+
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    border: 1px solid rgb(175, 175, 175);
+
+    text-align: center;
+    padding: 10px;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    font-family: "Outfit";
+    font-size: 18px;
+}
+
+.sign-up-button
+{
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    padding: 10px 0px;
+
+    border: 1px solid rgb(175, 175, 175);
+    border-radius: 10px;
+
+    font-family: "Outfit";
+    font-size: 24px;
+    font-weight: 500;
+}

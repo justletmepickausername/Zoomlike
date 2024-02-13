@@ -1,0 +1,31 @@
+.main-container
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(124, 88, 88);
+    padding: 20px 0px;
+}
+
+.mid-links
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.link
+{
+    font-family: "Outfit";
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+}
+
+.active-link
+{
+    text-decoration: underline;
+}

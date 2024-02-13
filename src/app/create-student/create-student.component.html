@@ -1,0 +1,76 @@
+<div class="main-container">
+
+    <div class="inner-container">
+
+        <div class="centered-container">
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p class="page-title">Student Creation</p>
+                <img src="/assets/close.svg" class="close-image" (click)="ExitPage()"/>
+            </div>
+
+            <div class="flex-column" style="margin-top: 45px;">
+
+                <div class="flex-row">
+                    
+                    <div class="flex-column">
+                        
+                        <p class="input-label">Student Name</p>
+                        <input id="studentName" placeholder="Enter student name"/>
+
+                    </div>
+
+                    <div class="flex-column">
+                        
+                        <p class="input-label">Student Email</p>
+                        <input id="studentEmail" placeholder="Enter student email"/>
+
+                    </div>
+
+                </div>
+
+                <div class="flex-row">
+                    
+                    <div class="flex-column">
+                        
+                        <p class="input-label">Student Password</p>
+                        <input id="studentPass1" placeholder="Enter password"/>
+
+                    </div>
+
+                    <div class="flex-column">
+                        
+                        <p class="input-label">Repeat Password</p>
+                        <input id="studentPass2" placeholder="Repeat passowrd"/>
+
+                    </div>
+
+                </div>
+
+                <div class="flex-row">
+                    
+                    <div class="flex-column">
+                        
+                        <p class="input-label">Parent Full Name</p>
+                        <input id="parentName" placeholder="Enter parent full name"/>
+
+                    </div>
+
+                    <div class="flex-column">
+                        
+                        <p class="input-label">Parent Phone Number</p>
+                        <input id="parentNumber" placeholder="Enter parent phone number"/>
+
+                    </div>
+
+                </div>
+
+                <button (click)="CreateStudent()" class="create-button">Create Student</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

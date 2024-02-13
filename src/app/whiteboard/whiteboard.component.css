@@ -1,0 +1,91 @@
+.main-container
+{
+    height: 100vh;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.toolbar-container
+{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 20px 130px;
+}
+
+.page-text
+{
+
+}
+
+canvas
+{
+    width: 100%;
+    height: calc(100vh);
+}
+
+.page-name
+{
+    color: var(--Blue, #005EEE);
+    font-family: Poppins;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    margin: 0;
+    padding: 0;
+}
+
+.page-tools
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.small-toolbar-container
+{
+    border-radius: 44px;
+    background-color: var(--Gray, #E8EEF5);
+
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    padding: 15px;
+}
+
+.toolbar-tool
+{
+    width: 36px;
+}
+
+.whiteboard-area
+{
+    background-image: url('/assets/whiteboard-square-background.svg');
+}
+
+.tool-container
+{
+    border-radius: 50%;
+    padding: 4px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active-tool
+{
+    background-color: #c6d4e4;
+}
+
+.tool-container:hover
+{
+    cursor: pointer;
+}

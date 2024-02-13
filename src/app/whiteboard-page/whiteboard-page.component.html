@@ -1,0 +1,42 @@
+
+<div class="toolbar-container">
+
+    <div class="relative-container">
+
+        <div class="toolbar-tool" (click)="userClickedOpenColorPicker()">
+            <i id="colorPickerBackground" class="fa-solid fa-droplet tool-icon"></i>
+        </div>
+
+        <input id="color-picker" class="color-picker-input" type="color"/>
+
+    </div>
+
+    <div (click)="userClickedPaintbrushTool()" class="toolbar-tool selected-tool">
+        <i class="fa-solid fa-paintbrush tool-icon"></i>
+    </div>
+
+    <div (click)="userClickedSquareTool()" class="toolbar-tool">
+        <i class="fa-regular fa-square tool-icon"></i>
+    </div>
+
+    <div (click)="userClickedCircleTool()" class="toolbar-tool">
+        <i class="fa-regular fa-circle tool-icon"></i>
+    </div>
+
+    <div class="toolbar-tool-long">
+        <mat-slider min="2" max="16" step="1" showTickMarks discrete>
+            <input #inputSlider matSliderThumb (change)="onThicknessChanged(inputSlider)">
+        </mat-slider>
+    </div>
+
+    <div (click)="userClickedTextTool()" class="toolbar-tool">
+        <i class="fa-solid fa-t tool-icon"></i>
+    </div>
+
+    <div (click)="userClickedEraserTool()" class="toolbar-tool">
+        <i class="fa-solid fa-eraser tool-icon"></i>
+    </div>
+
+</div>
+<canvas (click)="userClickedCanvas()" id="whiteboard-canvas"></canvas>
+

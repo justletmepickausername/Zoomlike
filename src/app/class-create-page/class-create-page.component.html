@@ -1,0 +1,107 @@
+<div class="main-container">
+
+    <div class="inner-container">
+
+        <div style="display: flex; justify-content: space-between;">
+            <p class="page-title">Class Creation</p>
+            <img src="/assets/close.svg" class="close-image" (click)="ExitClassCreationPage()"/>
+        </div>
+
+        <div class="flex-row">
+
+            <div class="flex-column">
+
+                <p class="input-label">Class Name</p>
+
+                <input class="input-field" id="classCreationClassNameInput" placeholder="Enter Class Name"/>
+
+                <p class="input-label">Class Time</p>
+
+                <div class="flex-row-v2 gap">
+
+                    <div class="input-icons">
+                        
+                        <input id="classCreationStartingHourInput" class="input-field-v3" type="time"/>
+                    </div>
+
+                    <div class="input-icons">
+                        
+                        <input id="classCreationEndingHourInput" class="input-field-v3" type="time"/>
+                    </div>
+
+                </div>
+
+                <p class="input-label">Select Teacher</p>
+                <div class="input-icons">
+                    <img src="/assets/badge.svg" class="icon-image"/>
+                    <mat-select [(value)]="selectedTeacher" id="classCreationTeacherSelect" placeholder="Select Teacher">
+                        <mat-option *ngFor="let row of teacherAccounts; index as i" value="row.username">{{row.username}}</mat-option>
+                    </mat-select>
+                </div>
+
+            </div>
+
+            <div class="flex-column">
+                
+                <p class="input-label">Class Day</p>
+                <mat-select id="classCreationClassDaySelect" placeholder="Select Class Day">
+                    <mat-option value="Sunday">Sunday</mat-option>
+                    <mat-option value="Monday">Monday</mat-option>
+                    <mat-option value="Tuesday">Tuesday</mat-option>
+                    <mat-option value="Wednesday">Wednesday</mat-option>
+                    <mat-option value="Thursday">Thursday</mat-option>
+                    <mat-option value="Friday">Friday</mat-option>
+                </mat-select>
+
+                <p class="input-label">Select Students</p>
+                <div class="input-icons">
+                    <mat-select multiple id="classCreationStudentsSelect" placeholder="Select Students">
+                        <mat-option *ngFor="let row of studentAccounts; index as i">{{row.username}}</mat-option>
+                    </mat-select>
+                </div>
+
+                <div class="class-defaults-row">
+
+                    <div class="flex-column">
+
+                        <p class="input-label">Microphone</p>
+
+                        <div class="cycle-button" (click)="CycleMicrophoneState()">
+                            <img id="microphoneImage" src="/assets/microphone-lines-slash-solid.svg" class="unmuted-mic"/>
+                        </div>
+
+                    </div>
+
+                    <div class="flex-column">
+
+                        <p class="input-label">Camera</p>
+
+                        <div class="cycle-button" (click)="CycleVideoState()">
+                            <img id="videoImage" src="/assets/video-slash-solid.svg" class="with-cam"/>
+                        </div>
+
+                    </div>
+
+                    <div class="flex-column">
+
+                        <p class="input-label">Whiteboard</p>
+
+                        <div class="cycle-button" (click)="CycleBackgroundState()">
+                            <img id="backgroundImage" src="/assets/grid-1.svg" class="option-image"/>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="center-button">
+            <button (click)="CreateClass()" class="create-button">Create Class</button>
+        </div>
+
+    </div>
+
+</div>

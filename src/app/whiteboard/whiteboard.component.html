@@ -1,0 +1,49 @@
+<div class="main-container">
+
+    <div class="toolbar-container">
+
+        <p class="page-name">Mathematics Class</p>
+
+        <div class="page-tools">
+
+            <div class="small-toolbar-container">
+
+                <div id="text-tool" #textTool class="tool-container" (click)="ToolClicked('TEXT', textTool)">
+                    <img class="toolbar-tool" src="/assets/text.svg"/>
+                </div>
+
+                <div id="brush-tool" #brushTool class="tool-container active-tool" (click)="ToolClicked('BRUSH', brushTool)">
+                    <img class="toolbar-tool" src="/assets/Pen.svg"/>
+                </div>
+
+                <div id="pen-tool" #penTool class="tool-container" (click)="ToolClicked('PEN', penTool)">
+                    <img class="toolbar-tool" src="/assets/path.svg"/>
+                </div>
+
+                <div id="eraser-tool" #eraserTool class="tool-container" (click)="ToolClicked('ERASER', eraserTool)">
+                    <img class="toolbar-tool" src="/assets/eraser.svg"/>
+                </div>
+
+                <div class="tool-container">
+                    <img class="toolbar-tool" src="/assets/shapes.svg"/>
+                </div>
+
+            </div>
+            
+            <div class="whiteboard-background-dropdown-container">
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="whiteboard-area">
+        <canvas id="whiteboard-canvas">
+
+        </canvas>
+    </div>
+
+</div>

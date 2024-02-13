@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+
+<div class="main-container">
+
+    <div class="inner-container">
+
+        <div class="module">
+
+            <p class="module-title">Create Teacher Accounts</p>
+
+            <div class="spacer-container">
+
+                <p class="input-label">Teacher Username</p>
+                <input #teacherUsernameInput/>
+
+                <p class="input-label">Teacher Password</p>
+                <input #teacherPasswordInput/>
+
+                <p class="input-label">Teacher Email</p>
+                <input #teacherEmailInput/>
+
+                <button (click)="CreateTeacherAccount(teacherUsernameInput, teacherPasswordInput, teacherEmailInput)" class="module-button">Create Account</button>
+
+            </div>
+
+        </div>
+
+        <div class="module">
+
+            <p class="module-title">Manage Teacher Accounts</p>
+
+            <table>
+
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Controls</th>
+                </tr>
+
+                <tr *ngFor="let row of teacherAccounts; index as i">
+                    <td>{{row.username}}</td>
+                    <td>{{row.email}}</td>
+                    <td>
+                        <div class="controls-container">
+
+                            <img (click)="DeleteTeacherAccount(i)" class="control-button" src="/assets/trash.svg"/>
+
+                            <mat-icon (click)="ResetTeacherPassword(i)" style="color: #284068; font-size: 33px; width: 40px; height: 30px; padding: 0;" class="material-symbols-outlined special-icon control-button">
+                                lock_reset
+                            </mat-icon>
+
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

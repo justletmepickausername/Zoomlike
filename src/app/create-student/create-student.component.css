@@ -1,0 +1,109 @@
+.main-container
+{
+    width: 100%;
+    height: 100vh;
+
+    background-image: url('/assets/Full-Pattern.svg');
+    background-color: #005EEE0D;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container
+{
+    padding: 50px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.flex-column
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row
+{
+    display: flex;
+    flex-direction: row;
+
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+.input-label
+{
+    color: var(--Black, #242424);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+
+    padding: 0;
+    margin: 0;
+}
+
+input
+{
+    border-radius: 12px;
+    background: var(--Gray, #E8EEF5);
+
+    width: 20vw;
+    padding: 15px;
+
+    border: none;
+
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+::placeholder
+{
+    color: #A7BBDA;
+
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.page-title
+{
+    color: var(--Blue, #005EEE);
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+
+    padding: 0;
+    margin: 0;
+}
+
+.create-button
+{
+    border-radius: 12px;
+    background-color: var(--Blue, #005EEE);
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.10);
+
+    color: var(--White, #FFF);
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+
+    border: none;
+
+    align-self: center;
+
+    padding: 22px 160px;
+    margin-top: 25px;
+}

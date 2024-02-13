@@ -1,0 +1,79 @@
+<div class="main-container">
+
+    <div class="inner-container">
+
+
+
+        <button  class="sign-up-button">Sign In</button>
+
+    </div>
+
+</div>
+
+<div class="main-container-2">
+
+    <div class="left-column">
+        
+        <div class="flex-row">
+
+            <img class="logo-image" src="/assets/Logo.svg"/>
+
+            <div class="flex-column">
+
+                <p class="main-title">Online Class</p>
+                <p class="sub-title">The next big thing in learning</p>
+
+            </div>
+
+        </div>
+
+        <img src="/assets/login-image.svg"/>
+
+    </div>
+
+    <div class="right-column">
+        
+        <div class="login-card">
+
+            <p class="login-card-title">Log In</p>
+            <p class="login-card-description">Enter your details and log into your account.</p>
+
+            <div class="login-flex-row">
+
+                <button id="studentButton" (click)="SelectButton(studentButton)" #studentButton class="login-option-button selected-option-button">Student</button>
+                <button id="teacherButton" (click)="SelectButton(teacherButton)" #teacherButton class="login-option-button">Teacher</button>
+                <button id="principalButton" (click)="SelectButton(principalButton)" #principalButton class="login-option-button">Principal</button>
+
+            </div>
+
+            <div class="input-icons">
+
+                <img src="/assets/profile.svg" class="icon-image"/>
+                <input #usernameInput class="input-field" type="text" placeholder="Enter Username">
+
+            </div>
+
+            <div class="input-icons">
+
+                <img src="/assets/lock.svg" class="icon-image"/>
+                <img id="eye-image" src="/assets/eye-slash.svg" class="icon-image-right eye-image" (mouseenter)="mouseEnterEye()" (mouseleave)="mouseLeaveEye()" (click)="mouseClickEye()"/>
+                <input id="password-input" #passwordInput class="input-field" type="password" placeholder="Enter Password">
+
+            </div>
+
+            <p class="forgot-pass">Forgot Password?</p>
+
+            <button (click)="SignInUser(usernameInput, passwordInput)" class="login-card-button">Log In</button>
+
+            <p class="continue-as-guest">Continue as a guest</p>
+
+            <div class="flex-row" style="margin-top: 35px;">
+                <p class="extra-card-text">Don't have an account?</p>
+                <a class="login-link-text" href="/signup">Sign Up</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

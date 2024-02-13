@@ -54,6 +54,48 @@ const clientId = 'RANDOM_VALUE';
 
 export class KinesisTestComponent 
 {
+    constructor() {}
+
+    async ngOnInit()
+    {
+        var videoSelect = document.getElementById("video-select") as HTMLSelectElement;
+
+        var allDevices = await navigator.mediaDevices.enumerateDevices();
+
+        for(let i = 0; i < allDevices.length; i++)
+        {
+            if(allDevices[i].kind === 'videoinput')
+            {
+                var option = document.createElement('option');
+
+                option.value = allDevices[i].deviceId;
+                option.innerHTML = allDevices[i].deviceId;
+
+                videoSelect.appendChild(option);
+            }
+        }
+
+        const resolution = 
+        {  
+            width: 
+            { 
+                ideal: 1280 
+            }, 
+            height: 
+            { 
+                ideal: 720 
+            } 
+        };
+
+
+        const constraints = 
+        {
+            video: resolution,
+            audio: true,
+        };
+        
+        //var testingShit = await navigator.mediaDevices.getUserMedia(constraints);
+    }
     
     getRandomClientId() 
     {
@@ -65,6 +107,7 @@ export class KinesisTestComponent
 
     async StartMaster()
     {
+        var videoSelect = document.getElementById("video-select") as HTMLSelectElement;
 
         remoteView = document.getElementsByTagName('video')[1];
         localView = document.getElementsByTagName('video')[0];
@@ -140,16 +183,22 @@ export class KinesisTestComponent
         iceServers.push({ urls: `stun:stun.kinesisvideo.eu-central-1.amazonaws.com:443` });
         console.log('[MASTER] ICE servers: ', iceServers);
 
+
+
         const resolution = 
         { 
-            width: 
-            { 
-                ideal: 1280 
-            }, 
-            height: 
-            { 
-                ideal: 720 
-            } 
+            deviceId:
+            {
+                exact: videoSelect.value
+            },
+            // width: 
+            // { 
+            //     ideal: 1280 
+            // }, 
+            // height: 
+            // { 
+            //     ideal: 720 
+            // } 
         };
 
         const constraints = 
@@ -162,6 +211,7 @@ export class KinesisTestComponent
         try
         {
             master.localStream = await navigator.mediaDevices.getUserMedia(constraints);
+            //master.localStream = await navigator.mediaDevices.getDisplayMedia();
 
             console.log(localView)
             console.log(master.localStream);

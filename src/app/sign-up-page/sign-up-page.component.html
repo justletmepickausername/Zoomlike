@@ -1,0 +1,30 @@
+<div class="main-container">
+
+    <div class="inner-container">
+
+        <p class="main-page-title">Sign Up</p>
+
+        <p class="input-label">Username</p>
+        <input #usernameInput placeholder="A unique username"/>
+
+        <p class="input-label">User Type</p>
+        <select #userTypeSelect>
+            <option>Principal</option>
+            <option>Teacher</option>
+            <option>Student</option>
+        </select>
+
+        <p class="input-label">Email Address</p>
+        <input #emailInput placeholder="example@example.com"/>
+
+        <p class="input-label">Confirm Email Address</p>
+        <input #confirmEmailInput placeholder="example@example.com"/>
+
+        <p class="input-label">Password</p>
+        <input #passwordInput type="password" placeholder="Secure Password"/>
+
+        <button (click)="SignUpUser(usernameInput, emailInput, confirmEmailInput, passwordInput, userTypeSelect)" class="sign-up-button">Sign Up</button>
+
+    </div>
+
+</div>

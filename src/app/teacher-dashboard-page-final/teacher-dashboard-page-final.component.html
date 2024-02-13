@@ -1,0 +1,176 @@
+<div class="main-container">
+
+    <div class="title-bar-container">
+
+        <div class="title-bar-inner-container">
+
+            <div class="title-bar-logo-container">
+
+                <img src="/assets/title-bar-image.svg"/>
+
+            </div>
+
+            <div class="title-bar-links-container">
+
+                <a class="link" routerLink="/teacher-dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                <a class="link" routerLink="/schedule" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Schedule</a>
+                <a class="link" routerLink="/whiteboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Whiteboard</a>
+
+            </div>
+
+            <div class="title-bar-profile-container">
+
+                <img class="notification-image" src="/assets/notification-bing.svg"/>
+
+                <img class="profile-image" src="/assets/profile-pic.svg"/>
+
+                <div class="name-and-user">
+                    <p class="name">{{teacherData.Username}}</p>
+                    <p class="username">@{{teacherData.Username}}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-content-container">
+
+        <div class="overview-row">
+
+            <p class="row-title">Overview</p>
+
+            <div class="cards-row">
+
+                <div class="card">
+
+                    <img class="card-icon" src="/assets/enrolled-cap-icon.svg"/>
+
+                    <div class="card-inner-container">
+
+                        <p class="card-title">Enrolled Students</p>
+                        <p class="card-value" style="color: #338D4C;">{{studentCount}}</p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <img class="card-icon" src="/assets/active-classes-icon.svg"/>
+
+                    <div class="card-inner-container">
+
+                        <p class="card-title">Active Classes</p>
+                        <p class="card-value" style="color: #FFC700;">{{classCount}}</p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <img class="card-icon" src="/assets/active-students-icon.svg"/>
+
+                    <div class="card-inner-container">
+
+                        <p class="card-title">Active Students</p>
+
+                        <div class="flex-row">
+                            <progress class="progress-bar-active-students" value="0.77"></progress>
+                            <p class="progress-val">77%</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="upcoming-classes-row">
+
+            <p class="row-title">Upcoming Classes</p>
+
+            <div class="cards-row">
+
+                <div class="card" *ngFor="let classData of teacherClasses">
+                     
+                    <img class="card-icon" src="/assets/Calculate.svg"/>
+
+                    <div class="card-inner-container">
+
+                        <p class="lesson-number">Lesson 01</p>
+                        <p class="lesson-name">{{classData.className}}</p>
+
+                        <div class="flex-row-space-between">
+                            <p class="lesson-day">{{classData.dayOfTheWeek}}</p>
+                            <p class="lesson-time-left">02h Left</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+                     
+                    <img class="card-icon" src="/assets/atom-02.svg"/>
+
+                    <div class="card-inner-container">
+
+                        <p class="lesson-number">Lesson 04</p>
+                        <p class="lesson-name">Physics Class</p>
+
+                        <div class="flex-row-space-between">
+                            <p class="lesson-day">Today</p>
+                            <p class="lesson-time-left">14:15</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+                     
+                    <img class="card-icon" src="/assets/beaker-01.svg"/>
+
+                    <div class="card-inner-container">
+
+                        <p class="lesson-number">Lesson 12</p>
+                        <p class="lesson-name">Chemistry Class</p>
+
+                        <div class="flex-row-space-between">
+                            <p class="lesson-day">Tomorrow</p>
+                            <p class="lesson-time-left">08:00</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="shortcuts-row">
+
+            <p class="row-title">Shortcuts</p>
+
+            <div class="cards-row">
+
+                <div class="card-button">
+                    <p class="button-text">Manage Classes</p>
+                </div>
+
+                <div class="card-button">
+                    <p class="button-text">Manage Students</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
