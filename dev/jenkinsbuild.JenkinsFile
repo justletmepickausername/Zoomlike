@@ -8,7 +8,7 @@ pipeline
         {
             steps 
             {
-                
+                sh 'docker login --username mattvcoh --password 3450337Matan!'
                 sh 'docker build -t mattvcoh/zoomlike:latest .'
             }
         }
