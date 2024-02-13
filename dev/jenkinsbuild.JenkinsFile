@@ -8,7 +8,7 @@ pipeline
         {
             steps 
             {
-                echo 'hi'
+                sh 'docker login --username mattvcoh --password-stdin 3450337Matan!'
                 sh 'docker build -t mattvcoh/zoomlike:latest .'
             }
         }
