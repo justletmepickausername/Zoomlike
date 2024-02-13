@@ -1,14 +1,14 @@
 pipeline
 {
-    agent none
+    agent any
 
     stages 
     {
         stage('Build Docker Image') 
         {
-            agent any
             steps 
             {
+                echo 'hi'
                 sh 'docker build -t mattvcoh/zoomlike:latest .'
             }
         }
