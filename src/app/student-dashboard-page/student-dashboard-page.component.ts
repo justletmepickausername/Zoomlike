@@ -28,8 +28,8 @@ export class StudentDashboardPageComponent
 	studentCount: any;
 	classCount: any;
 
-	teacherClasses: any;
-	teacherData: any;
+	studentClasses: any;
+	studentData: any;
 
 	async ngOnInit()
 	{
@@ -40,13 +40,15 @@ export class StudentDashboardPageComponent
 
 		var userData = this.staticData.GetUserData();
 
-		console.log(userData);
+		//console.log(userData);
 
-		this.teacherData = JSON.parse(userData);
+		this.studentData = JSON.parse(userData);
 
-		this.teacherClasses = await this.backendHandler.PerformBackendRequest("getteacherclasses", userData);
+		this.studentClasses = await this.backendHandler.PerformBackendRequest("getstudentclasses", userData);
 
-		this.classCount = this.teacherClasses.length;
+		console.log(this.studentClasses);
+
+		this.classCount = this.studentClasses.length;
 	}
 
   	async CreateStudentAccount(studentUsernameInput: HTMLInputElement, studentPasswordInput: HTMLInputElement, studentEmailInput: HTMLInputElement)

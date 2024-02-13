@@ -1,0 +1,16 @@
+pipeline
+{
+    agent none
+
+    stages 
+    {
+        stage('Build Docker Image') 
+        {
+            agent any
+            steps 
+            {
+                sh 'docker build -t mattvcoh/zoomlike:latest .'
+            }
+        }
+    }
+}
