@@ -37,8 +37,8 @@ const peerConnectionsMap = new Map;
 
 const SignalingChannelARN = 'arn:aws:kinesisvideo:eu-central-1:757329877410:channel/WebRTC-Signaling-Channel/1701691596156';
 
-const accessKeyId = 'AKIA3AVDA3GRKZLZDON7';
-const secretAccessKey = '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';
+const accessKeyId = '';
+const secretAccessKey = '';
 
 let localView = document.getElementsByTagName('video')[0];
 let remoteView = document.getElementsByTagName('video')[1];
