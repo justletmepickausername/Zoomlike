@@ -13,9 +13,9 @@ pipeline
             steps 
             {
                 sh 'docker login -u="mattvcoh" -p="3450337Matan!"'
-                sh 'docker build -t mattvcoh/$IMAGE_NAME:latest .'
+                sh 'docker build -t mattvcoh/$IMAGE_NAME:$BUILD_NUMBER .'
                 sh 'docker tag $IMAGE_NAME:$BUILD_NUMBER mattvcoh/$IMAGE_NAME:$BUILD_NUMBER'
-                sh 'docker push mattvcoh/$IMAGE_NAME:$IMAGE_TAG'
+                sh 'docker push mattvcoh/$IMAGE_NAME:$BUILD_NUMBER'
             }
         }
     }
