@@ -9,7 +9,7 @@ pipeline
             steps 
             {
                 sh 'docker login -u="mattvcoh" -p="3450337Matan!"'
-                sh 'docker build -t mattvcoh/zoomlike:latest .'
+                sh 'docker build -f Dockerfile -t mattvcoh/zoomlike:latest .'
             }
         }
     }
