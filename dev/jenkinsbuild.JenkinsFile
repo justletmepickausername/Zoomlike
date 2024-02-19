@@ -8,6 +8,7 @@ pipeline
         {
             steps 
             {
+                sh 'sudo chmod 666 /var/run/docker.sock'
                 sh 'docker login -u="mattvcoh" -p="3450337Matan!"'
                 sh 'docker build -t mattvcoh/zoomlike:latest .'
             }
