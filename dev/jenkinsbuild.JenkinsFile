@@ -23,7 +23,8 @@ pipeline
             {
                 always 
                 {
-                    sh '''docker image prune -af --filter "until=24h"'''
+                    sh '''docker image prune -af --filter "until=1h"'''
+                    cleanWs()
                 }
             }
         }
