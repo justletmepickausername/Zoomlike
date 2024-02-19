@@ -18,8 +18,15 @@ pipeline
                 sh 'docker push mattvcoh/$IMAGE_NAME:$BUILD_NUMBER'
                 sh 'docker tag $IMAGE_NAME:$BUILD_NUMBER mattvcoh/$IMAGE_NAME:latest'
                 sh 'docker push mattvcoh/$IMAGE_NAME:latest'
-                sh 'docker image prune -af --filter "until=1h"'
-                sh 'docker system prune'
+            }
+            post
+            {
+                always 
+                {
+                    sh 'docker image prune -af --filter "until=1h"'
+                    sh 'docker system prune -f'
+                    cleanWs()
+                }
             }
         }
     }
