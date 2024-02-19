@@ -24,6 +24,7 @@ pipeline
                 always 
                 {
                     sh '''docker image prune -af --filter "until=1h"'''
+                    sh '''docker system prune'''
                     cleanWs()
                 }
             }
