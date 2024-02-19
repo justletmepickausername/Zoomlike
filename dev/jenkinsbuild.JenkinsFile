@@ -8,7 +8,6 @@ pipeline
         {
             steps 
             {
-                args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
                 sh 'docker login -u="mattvcoh" -p="3450337Matan!"'
                 sh 'docker build -t mattvcoh/zoomlike:latest .'
             }
