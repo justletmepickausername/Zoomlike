@@ -33,7 +33,7 @@ pipeline
                 snykSecurity(
                     snykInstallation: 'snyk@latest',
                     snykTokenId: '4f5e72ec-8b41-4037-ada2-30f90555b372',
-                    targetFile: 'jenkinsbuild.JenkinsFile'
+                    targetFile: 'dev/jenkinsbuild.JenkinsFile'
                 )
 
             }
