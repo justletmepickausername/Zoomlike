@@ -38,7 +38,6 @@ pipeline
             {
                 sh 'curl https://static.snyk.io/cli/v1.666.0/snyk-linux -o snyk'
                 sh 'chmod +x ./snyk'
-                sh 'npm i --package-lock-only'
                 sh './snyk auth $SNYK_API_KEY'
                 sh './snyk test --all-projects -d'
                 sh './snyk monitor --all-projects'
