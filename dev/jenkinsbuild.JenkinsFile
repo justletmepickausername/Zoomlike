@@ -33,14 +33,11 @@ pipeline
         }
         stage('Cleanup Stage')
         {
-            post
+            steps
             {
-                always
-                {
-                    sh 'docker image prune -af --filter "until=1h"'
-                    sh 'docker system prune -f'
-                    cleanWs()
-                }
+                sh 'docker image prune -af --filter "until=1h"'
+                sh 'docker system prune -f'
+                cleanWs()
             }
         }
     }
