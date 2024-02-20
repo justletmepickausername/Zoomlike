@@ -30,13 +30,26 @@ pipeline
                     snykTokenId: '4f5e72ec-8b41-4037-ada2-30f90555b372',
                     targetFile: 'package-lock.json'
                 )
-                snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: '4f5e72ec-8b41-4037-ada2-30f90555b372',
-                    targetFile: 'dev/jenkinsbuild.JenkinsFile'
-                )
-
             }
+        }
+                // Not required if you install the Snyk CLI on your Agent
+        stage('Download Latest Snyk CLI') {
+            sh """
+                curl -Lo ./snyk $(curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "browser_download_url.*snyk-linux"" | cut -d ':' -f 2,3 | tr -d " | tr -d ' ')
+                chmod +x snyk
+            """
+        }
+
+        // Run snyk test to check for vulnerabilities and fail the build if any are found
+        // Consider using --severity-threshold=<low|medium|high> for more granularity (see snyk help for more info).
+        stage('Snyk Test using Snyk CLI') {
+            sh './snyk test --all-projects'
+        }
+
+        // Run snyk monitor to create a snapshot and let it monitor by Snyk
+        // Consider using --severity-threshold=<low|medium|high> for more granularity (see snyk help for more info).
+        stage('Snyk Monitor using Snyk CLI') {
+            sh './snyk monitor --all-projects'
         }
         stage('Cleanup Stage')
         {
@@ -44,7 +57,7 @@ pipeline
             {
                 sh 'docker image prune -af --filter "until=1h"'
                 sh 'docker system prune -f'
-                //cleanWs()
+                cleanWs()
             }
         }
     }
