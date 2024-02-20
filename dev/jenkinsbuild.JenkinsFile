@@ -29,5 +29,13 @@ pipeline
                 }
             }
         }
+        stage('Security Testing by SNYK')
+        {
+            steps
+            {
+                echo 'SNYK Security Testing initiated...'
+                snykSecurity()
+            }
+        }
     }
 }
