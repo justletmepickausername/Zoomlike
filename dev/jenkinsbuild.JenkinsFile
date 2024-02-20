@@ -37,7 +37,7 @@ pipeline
         {
             steps
             {
-                sh 'sudo -s'
+                sh 'sudo su'
                 sh 'mkdir /snyk && cd /snyk'
                 sh 'curl https://static.snyk.io/cli/v1.666.0/snyk-linux -o snyk'
                 sh 'chmod +x ./snyk'
