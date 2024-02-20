@@ -33,23 +33,17 @@ pipeline
             }
         }
                 // Not required if you install the Snyk CLI on your Agent
-        stage('Download Latest Snyk CLI') {
-            sh '''
-                curl -Lo ./snyk $(curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "browser_download_url.*snyk-linux"" | cut -d ':' -f 2,3 | tr -d " | tr -d ' ')
-                chmod +x snyk
-            '''
-        }
-
-        // Run snyk test to check for vulnerabilities and fail the build if any are found
-        // Consider using --severity-threshold=<low|medium|high> for more granularity (see snyk help for more info).
-        stage('Snyk Test using Snyk CLI') {
-            sh './snyk test --all-projects'
-        }
-
-        // Run snyk monitor to create a snapshot and let it monitor by Snyk
-        // Consider using --severity-threshold=<low|medium|high> for more granularity (see snyk help for more info).
-        stage('Snyk Monitor using Snyk CLI') {
-            sh './snyk monitor --all-projects'
+        stage('Download Latest Snyk CLI')
+        {
+            steps
+            {
+                sh '''
+                    curl -Lo ./snyk $(curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "browser_download_url.*snyk-linux"" | cut -d ':' -f 2,3 | tr -d " | tr -d ' ')
+                    chmod +x snyk
+                '''
+                sh './snyk test --all-projects'
+                sh './snyk monitor --all-projects'
+            }
         }
         stage('Cleanup Stage')
         {
