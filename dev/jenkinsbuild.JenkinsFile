@@ -12,7 +12,7 @@ pipeline
         {
             steps 
             {
-                sh 'docker login -u="mattvcoh" -p=$DOCKER_PASS'
+                sh 'docker login -u=$DOCKER_USER -p=$DOCKER_PASS'
                 sh 'docker build -t $IMAGE_NAME:$BUILD_NUMBER .'
                 sh 'docker tag $IMAGE_NAME:$BUILD_NUMBER mattvcoh/$IMAGE_NAME:$BUILD_NUMBER'
                 sh 'docker push mattvcoh/$IMAGE_NAME:$BUILD_NUMBER'
