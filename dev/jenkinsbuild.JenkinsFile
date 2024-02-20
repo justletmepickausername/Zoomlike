@@ -19,15 +19,6 @@ pipeline
                 sh 'docker tag $IMAGE_NAME:$BUILD_NUMBER mattvcoh/$IMAGE_NAME:latest'
                 sh 'docker push mattvcoh/$IMAGE_NAME:latest'
             }
-            post
-            {
-                always 
-                {
-                    sh 'docker image prune -af --filter "until=1h"'
-                    sh 'docker system prune -f'
-                    cleanWs()
-                }
-            }
         }
         stage('Security Testing by SNYK')
         {
@@ -38,6 +29,18 @@ pipeline
                     snykInstallation: 'snyk@latest',
                     snykTokenId: '4f5e72ec-8b41-4037-ada2-30f90555b372'
                 )
+            }
+        }
+        stage('Cleanup Stage')
+        {
+            post
+            {
+                always
+                {
+                    sh 'docker image prune -af --filter "until=1h"'
+                    sh 'docker system prune -f'
+                    cleanWs()
+                }
             }
         }
     }
