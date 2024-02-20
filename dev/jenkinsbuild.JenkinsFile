@@ -37,10 +37,9 @@ pipeline
         {
             steps
             {
-                sh '''
-                    curl -Lo ./snyk $(curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "browser_download_url.*snyk-linux"" | cut -d ':' -f 2,3 | tr -d " | tr -d ' ')
-                    chmod +x snyk
-                '''
+                sh 'mkdir /snyk && cd /snyk'
+                sh 'curl https://static.snyk.io/cli/v1.666.0/snyk-linux -o snyk'
+                sh 'chmod +x ./snyk'
                 sh './snyk test --all-projects'
                 sh './snyk monitor --all-projects'
             }
