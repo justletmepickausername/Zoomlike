@@ -34,10 +34,10 @@ pipeline
         }
                 // Not required if you install the Snyk CLI on your Agent
         stage('Download Latest Snyk CLI') {
-            sh """
+            sh '''
                 curl -Lo ./snyk $(curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "browser_download_url.*snyk-linux"" | cut -d ':' -f 2,3 | tr -d " | tr -d ' ')
                 chmod +x snyk
-            """
+            '''
         }
 
         // Run snyk test to check for vulnerabilities and fail the build if any are found
