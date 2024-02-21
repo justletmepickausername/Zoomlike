@@ -4,7 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install --package-lock-only
+RUN rm -rf node_modules
+
+RUN npm cache clear
 
 RUN npm install
 
