@@ -4,11 +4,11 @@ WORKDIR /app
 
 COPY . .
 
+RUN npm install --package-lock-only
+
 RUN npm install
 
 RUN npm run build
-
-RUN npm install --package-lock-only
 
 FROM nginx:alpine
 
