@@ -4,6 +4,10 @@ WORKDIR /app
 
 COPY . .
 
+RUN echo npm --verison
+
+RUN npm install -g npm@9.8.1
+
 RUN npm install
 
 RUN npm run build
