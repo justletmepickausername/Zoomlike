@@ -24,7 +24,7 @@
     "@tldraw/tldraw": "^2.0.0-beta.1",
     "@types/node": "^20.10.3",
     "amazon-kinesis-video-streams-webrtc": "^2.2.0",
-    "aws-sdk": "^2.1511.0",
+    "aws-sdk": "^2.1547.0",
     "luxon": "^3.4.4",
     "ng-whiteboard": "^3.0.3",
     "ngx-color-picker": "^16.0.0",
