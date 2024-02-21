@@ -44,15 +44,7 @@ pipeline
         //         sh './snyk monitor --all-projects'
         //     }
         // }
-        stage('Cleanup Stage')
-        {
-            steps
-            {
-                sh 'docker image prune -af --filter "until=1h"'
-                sh 'docker system prune -f'
-                cleanWs()
-            }
-        }
+        
         stage('Trigger Deploy') 
         {
             steps 
@@ -60,6 +52,15 @@ pipeline
                 build job: 'jesnkinsdeploy', wait: false, parameters: [
                     string(name: 'FRONTEND_IMAGE_LATEST', value: "mattvcoh/$IMAGE_NAME:latest")
                 ]
+            }
+        }
+        stage('Cleanup Stage')
+        {
+            steps
+            {
+                sh 'docker image prune -af --filter "until=1h"'
+                sh 'docker system prune -f'
+                cleanWs()
             }
         }
     }
