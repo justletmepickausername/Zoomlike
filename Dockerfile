@@ -6,7 +6,7 @@ COPY . .
 
 RUN rm -rf node_modules
 
-RUN npm cache clear
+RUN npm cache clear --force
 
 RUN npm install
 
