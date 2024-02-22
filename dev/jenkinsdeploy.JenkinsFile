@@ -33,7 +33,7 @@ pipeline
                 bash common/replaceInFile.sh $K8S_CONFIGS/kube.yaml FRONTEND_IMAGE $FRONTEND_IMAGE_LATEST
 
                 chmod 400 newkey.pem
-                sshpass -p $newkey ssh -o StrictHostKeyChecking=no -i "newkey.pem" ubuntu@ec2-18-156-164-238.eu-central-1.compute.amazonaws.com kubectl apply -f $K8S_CONFIGS/kube.yaml
+                sshpass -p "$newkey" ssh -o StrictHostKeyChecking=no -i "newkey.pem" ubuntu@ec2-18-156-164-238.eu-central-1.compute.amazonaws.com kubectl apply -f $K8S_CONFIGS/kube.yaml
                 
                 /usr/local/bin/kubectl apply -f $K8S_CONFIGS/kube.yaml
                 '''
