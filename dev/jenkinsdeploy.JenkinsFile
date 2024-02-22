@@ -32,10 +32,8 @@ pipeline
 
                 bash common/replaceInFile.sh $K8S_CONFIGS/kube.yaml FRONTEND_IMAGE $FRONTEND_IMAGE_LATEST
 
-                chmod 777 newkey.pem
-                curl -o "newkey.pem" "https://ranking-frontend.s3.eu-central-1.amazonaws.com/newkey.pem?response-content-disposition=attachment&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHQaDGV1LWNlbnRyYWwtMSJIMEYCIQDV6zx7MSn0wi1yYIzOysqoRanmeYH0ewjVvAMwKUte2QIhAM7ItKxVeUtkJK11ogSt4mRQpjN0PG4WYmtdxG5BKRgpKugCCF0QABoMNzU3MzI5ODc3NDEwIgz%2B9w8VvL9jUBB3sKQqxQJiFqBVTfFMUv0kJibiYMxurp8BTsCbgtXddJOBTvTdG3G516Rm48B2VXa3gcAevudUbUPMuvy9VdH55lZrQ3SlyCmOc0RiyL%2FJlRSTzSMqWCm06%2BmovsDb087TllbT9Y%2BxYqfNHpLybzKpL2Q3NRF6OiI4Z2vZn0T0iDnED2y8Dn2h2c%2Bw1LSQxYZEeUFXHRzdcoJqJoHTmw%2FvC4zsW6wt56Lf2qM6tUY73tcJTKa0sB2vQR56JgmPDFyFXIUy0zHpVTSHOKEPWKIsF6M6VgJxLPue029Qm2hhxZw64BTDDbFyZzRxpxfXuS7xS56Yx2R6BLaa8Iu34dbS21jmulBS4Dnb8ggg24A75%2Biqg1BwbCfamW533TGJl2iTStZZV0xQ0JKumb%2FqcjyTrKCSTZzO%2Few%2FD8tPoXWLaW30DnOFXtt6QuozMNfU3K4GOrICSz6hjzfutagfRb6ocQvQhgrmbatZu3RRJu7XpBwbAqdF7S38dk5GXa5BunnhdkUkZUycbTJu9fcW4gQ44abLxI7AKM1mCc%2B8nK4V%2BjBm3wdk6qBRBjGgv%2BgSQjwYcWnJjdQBbjO7DEoMZjxgzDxdRNH5p9ofqZo8GHvMLOVPuQcKzP2GRPP3kzI9Tx0B5ziPaaPJyTV4RtlMskf7bQMjg6FD5dq%2Bv8FZrzasfZK6aoLlGi7ryUvTaxeQu1VsD%2BNXB10QF43K%2FeshxnnrNKa%2Bh9XSHxx41ck7PrizBr4CQ31LqiJ7oZr5wJqHTeK281Ux7t%2FTyMd883KH6bJPgZXuVW3l8fzR%2BiSgnXRQga183oqz7WmGf%2FZbLdZUR%2FQGsnoe0zdj2TIs0i4Lyn8%2BzY%2F5ya%2Fm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240222T131645Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIA3AVDA3GRLBKV456V%2F20240222%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Signature=9da3608f3e78d261d54168e10d21db4445ce44569ff8fcb6d94da2ce85710618"
                 chmod 400 newkey.pem
-                ssh -tt -o StrictHostKeyChecking=no -i "newkey.pem" ubuntu@ec2-18-156-164-238.eu-central-1.compute.amazonaws.com /usr/local/bin/kubectl apply -f $K8S_CONFIGS/kube.yaml
+                ssh -tt -o StrictHostKeyChecking=no -i "newkey.pem" ubuntu@ec2-18-156-164-238.eu-central-1.compute.amazonaws.com | kubectl apply -f $K8S_CONFIGS/kube.yaml
                 
                 /usr/local/bin/kubectl apply -f $K8S_CONFIGS/kube.yaml
                 '''
