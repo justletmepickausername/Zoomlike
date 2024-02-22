@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
-    "@syncfusion/ej2-angular-schedule": "^24.1.41",
+    "@syncfusion/ej2-angular-schedule": "^24.2.3",
     "@tldraw/tldraw": "^2.0.0-beta.1",
     "@types/node": "^20.10.3",
     "amazon-kinesis-video-streams-webrtc": "^2.2.0",
