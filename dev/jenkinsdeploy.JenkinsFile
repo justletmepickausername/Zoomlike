@@ -31,8 +31,9 @@ pipeline
                 # apply the configurations to k8s cluster
 
                 bash common/replaceInFile.sh $K8S_CONFIGS/kube.yaml FRONTEND_IMAGE $FRONTEND_IMAGE_LATEST
-
+                cat ~./ssh/config
                 ssh host_name
+                
                 /usr/local/bin/kubectl apply -f $K8S_CONFIGS/kube.yaml
                 '''
             }
