@@ -23,6 +23,8 @@ pipeline
                 sh '''
                 K8S_CONFIGS=$WORKSPACE/k8s
 
+                pwd
+
                 # replace placeholders in YAML k8s files
                 bash common/replaceInFile.sh $K8S_CONFIGS/kube.yaml APP_ENV $APP_ENV
 
