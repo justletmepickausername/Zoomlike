@@ -32,7 +32,7 @@ pipeline
 
                 bash common/replaceInFile.sh $K8S_CONFIGS/kube.yaml FRONTEND_IMAGE $FRONTEND_IMAGE_LATEST
                 
-                /usr/local/bin/kubectl apply -f $K8S_CONFIGS/kube.yaml
+                kubectl apply -f $K8S_CONFIGS/kube.yaml
                 '''
             }
         }
