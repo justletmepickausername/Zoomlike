@@ -31,8 +31,10 @@ pipeline
                 # apply the configurations to k8s cluster
 
                 bash common/replaceInFile.sh $K8S_CONFIGS/kube.yaml FRONTEND_IMAGE $FRONTEND_IMAGE_LATEST
-                
-                kubectl apply -f $K8S_CONFIGS/kube.yaml
+
+                curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl" 
+                chmod u+x ./kubectl 
+                ./kubectl apply -f $K8S_CONFIGS/kube.yaml
                 '''
             }
         }
