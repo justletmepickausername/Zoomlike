@@ -167,6 +167,7 @@ export class KinesisTestComponent
             systemClockOffset: kinesisVideoClient.config.systemClockOffset
         });
 
+        
         console.log('[HTTPS ENDPOINT] ', endpointsByProtocol['HTTPS']);
 
         // Get ICE server configuration
