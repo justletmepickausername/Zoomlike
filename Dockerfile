@@ -8,7 +8,7 @@ RUN npm install
 
 RUN npm run build
 
-FROM nginx:alpine
+FROM nginx:1.25.4-alpine3.18
 
 COPY --from=build /app/dist/zoomlike/ /usr/share/nginx/html
 
