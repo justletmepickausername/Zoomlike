@@ -23,7 +23,7 @@
     "@syncfusion/ej2-angular-schedule": "^24.1.41",
     "@tldraw/tldraw": "^2.0.0-beta.1",
     "@types/node": "^20.10.3",
-    "amazon-kinesis-video-streams-webrtc": "^2.2.0",
+    "amazon-kinesis-video-streams-webrtc": "^2.3.2",
     "aws-sdk": "^2.1511.0",
     "luxon": "^3.4.4",
     "ng-whiteboard": "^3.0.3",
